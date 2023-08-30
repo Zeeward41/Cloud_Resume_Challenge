@@ -14,12 +14,12 @@ function get_visiteurs(url_api, site_api) {
   })
     .then((response) => {
       // Log de la réponse HTTP complète
-      console.log("Réponse HTTP complète :", response);
+      //console.log("Réponse HTTP complète :", response);
       return response.json();
     })
     .then((data) => {
       // Log du contenu JSON de la réponse
-      console.log("Contenu JSON de la réponse :", data);
+     // console.log("Contenu JSON de la réponse :", data);
 
       document.querySelector(".n_visitors").textContent = data["n_visiteurs"];
     })
@@ -41,7 +41,7 @@ function update_visiteurs(api_url, site_url) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("API activée avec succès", data);
+        //console.log("API activée avec succès", data);
 
         document.querySelector(".n_visitors").textContent = data["n_visiteurs"];
 
