@@ -1,7 +1,8 @@
 # Création d'un bucket qui contiendra les fichiers du site web
+variable "url_web" {}
 
 resource "aws_s3_bucket" "bucket_base" {
-    bucket = "www.zeeward41.coma"
+    bucket = var.url_web
 
     tags = {
         Architecture = "website"
