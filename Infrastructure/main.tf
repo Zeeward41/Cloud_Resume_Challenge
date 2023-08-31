@@ -1,5 +1,5 @@
 provider "aws" {
-    region = "var.region_base"
+    region = var.region_base
     default_tags {
         tags = {
             Createur = "Zee"
@@ -12,4 +12,5 @@ provider "aws" {
 
 module "website" {
     source = "./modules/website"
+    
 }
