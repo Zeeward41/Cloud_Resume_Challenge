@@ -120,3 +120,32 @@ resource "aws_cloudfront_origin_access_control" "zeeward41_origin_access_control
     signing_behavior = "always"
     signing_protocol = "sigv4"
 }
+
+
+# Creation et attribution d'une policy au bucket Zeeward41 (allow uniquement
+// la distribution s3_distribution)
+
+resource "aws_s3_bucket_policy" "zeeward41_bucket_policy" {
+    bucket = aws_s3_bucket.bucket_base.id
+
+    policy = jsonencode({
+    Version = "2008-10-17",
+    Id      = "PolicyForCloudFrontPrivateContent",
+    Statement = [
+      {
+        Sid       = "AllowCloudFrontServicePrincipal",
+        Effect    = "Allow",
+        Principal = {
+          Service = "cloudfront.amazonaws.com"
+        },
+        Action    = "s3:GetObject",
+        Resource  = "${aws_s3_bucket.bucket_base.arn}/*",
+        Condition = {
+          StringEquals = {
+            "AWS:SourceArn" = aws_cloudfront_distribution.s3_distribution.arn
+          }
+        }
+      }
+    ]
+  })
+}
