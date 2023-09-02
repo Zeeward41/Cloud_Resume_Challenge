@@ -38,6 +38,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     viewer_certificate {
         ssl_support_method = "sni-only"
         acm_certificate_arn = aws_acm_certificate.zeeward41_acm.arn
+        minimum_protocol_version       = "TLSv1.2_2021"
     }
 
     //alternate domaine name
