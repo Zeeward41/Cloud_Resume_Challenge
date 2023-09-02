@@ -1,6 +1,5 @@
 resource "aws_s3_bucket" "bucket_base" {
     bucket = var.url_web
-
     tags = {
         Architecture = "website"
     }

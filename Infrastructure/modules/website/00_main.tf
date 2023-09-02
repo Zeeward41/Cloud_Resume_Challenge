@@ -7,6 +7,7 @@ provider "aws" {
 
 # Création d'un bucket qui contiendra les fichiers du site web
 variable "url_web" {}
+variable "url_name" {}
 
 locals {
     s3_origin_id = aws_s3_bucket.bucket_base.bucket_regional_domain_name
