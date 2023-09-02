@@ -1,3 +1,10 @@
+# Provider global
+
+provider "aws" {
+    alias = "global"
+    region = "us-east-1"
+}
+
 # Création d'un bucket qui contiendra les fichiers du site web
 variable "url_web" {}
 
