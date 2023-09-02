@@ -50,7 +50,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
 
 
-# Creation d'un origin request policy
+# Creation d'un cache policy
 
 resource "aws_cloudfront_cache_policy" "zeeward41_cache_policy" {
     name = "zeeward41_cache_policy"
