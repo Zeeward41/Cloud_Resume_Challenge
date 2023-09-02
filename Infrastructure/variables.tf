@@ -11,7 +11,7 @@ variable "url_web" {
 }
 
 variable "url_name" {
-  type = string
+  type        = string
   description = "nom du site"
-  default = "zeeward41.com"
+  default     = "zeeward41.com"
 }

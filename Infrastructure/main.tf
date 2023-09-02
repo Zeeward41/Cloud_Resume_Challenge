@@ -11,7 +11,7 @@ provider "aws" {
 # module 
 
 module "website" {
-  source  = "./modules/website"
-  url_web = var.url_web
+  source   = "./modules/website"
+  url_web  = var.url_web
   url_name = var.url_name
 }

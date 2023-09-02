@@ -16,3 +16,14 @@ resource "aws_route53_record" "zeeward41_cert_dns" {
     zone_id = data.aws_route53_zone.zeeward41_hosted_zone.zone_id
     ttl = 60
 }
+
+resource "aws_route53_record" "record_zeeward41" {
+    zone_id = data.aws_route53_zone.zeeward41_hosted_zone.zone_id
+    name = var.url_name
+    type = "A"
+    alias {
+        name = aws_cloudfront_distribution.s3_distribution.domain_name
+        zone_id = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
+        evaluate_target_health = false
+    }
+}
