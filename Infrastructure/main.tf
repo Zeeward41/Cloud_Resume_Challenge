@@ -15,3 +15,7 @@ module "website" {
   url_web  = var.url_web
   url_name = var.url_name
 }
+
+module "backend" {
+  source = "./modules/backend"
+}

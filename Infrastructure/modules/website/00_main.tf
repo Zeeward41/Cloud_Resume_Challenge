@@ -11,5 +11,5 @@ variable "url_name" {}
 
 locals {
     s3_origin_id = aws_s3_bucket.bucket_base.bucket_regional_domain_name
-    // = Name : www.zeeward41.com.s3.eu-west-3.amazonaws.com
+    // = Name : www.xxx.s3.eu-west-5.amazonaws.com
 }
