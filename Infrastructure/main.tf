@@ -18,4 +18,5 @@ module "website" {
 
 module "backend" {
   source = "./modules/backend"
+  region_base = var.region_base
 }
