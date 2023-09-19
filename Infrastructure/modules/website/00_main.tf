@@ -3,6 +3,7 @@
 provider "aws" {
     alias = "global"
     region = "us-east-1"
+    profile = "zeeward41"
 }
 
 # Création d'un bucket qui contiendra les fichiers du site web

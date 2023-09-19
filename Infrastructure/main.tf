@@ -1,5 +1,6 @@
 provider "aws" {
   region = var.region_base
+  profile = "zeeward41"
   default_tags {
     tags = {
       Createur = "Zee"
@@ -17,6 +18,6 @@ module "website" {
 }
 
 module "backend" {
-  source = "./modules/backend"
+  source      = "./modules/backend"
   region_base = var.region_base
 }
