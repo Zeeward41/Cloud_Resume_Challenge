@@ -2,7 +2,7 @@
 
 //"
 const site_url = "https://zeeward41.com";
-const api_url = "https://mzzoptlt7f.execute-api.eu-west-3.amazonaws.com/dev";
+const api_url = "https://2lua0kd9t2.execute-api.eu-west-2.amazonaws.com/dev";
 
 function get_visiteurs(url_api, site_api) {
   fetch(url_api, {
