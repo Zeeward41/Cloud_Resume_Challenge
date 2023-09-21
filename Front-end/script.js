@@ -2,15 +2,12 @@
 
 //"
 const site_url = "https://zeeward41.com";
-const api_url = "https://2lua0kd9t2.execute-api.eu-west-2.amazonaws.com/dev";
+const api_url = "https://w0e9kkhs0l.execute-api.eu-west-2.amazonaws.com/dev/lambda-to-dynamo-zeeward41";
 
 function get_visiteurs(url_api, site_api) {
   fetch(url_api, {
-    method: "GET", // ou la méthode appropriée
-    // Autres options de requête si nécessaires
-    headers: {
-      "Access-Control-Allow-Origin": site_api,
-    },
+    method: "GET" // ou la méthode appropriée
+    // // Autres options de requête si nécessaires
   })
     .then((response) => {
       // Log de la réponse HTTP complète
@@ -32,12 +29,9 @@ function get_visiteurs(url_api, site_api) {
 function update_visiteurs(api_url, site_url) {
   // Vérifier l'état de la session ou du cookie
   if (!sessionStorage.getItem("apiActivated")) {
-    // Activer l'API via une requête AJAX ou Fetch
+    // Activer l'API via une requête  Fetch
     fetch(api_url, {
-      method: "POST",
-      headers: {
-        "Access-Control-Allow-Origin": site_url,
-      },
+      method: "POST"
     })
       .then((response) => response.json())
       .then((data) => {
