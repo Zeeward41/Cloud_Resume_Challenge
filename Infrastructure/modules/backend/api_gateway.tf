@@ -48,7 +48,7 @@ resource "aws_api_gateway_deployment" "zeeward41_api_deployment" {
     lifecycle {
         create_before_destroy = true
     }
-    depends_on = [aws_api_gateway_method.zeeward41_get_method, aws_api_gateway_integration.zeeward41_get_integration]
+    depends_on = [aws_api_gateway_method.zeeward41_get_method, aws_api_gateway_integration.zeeward41_get_integration, aws_api_gateway_integration.zeeward41_post_integration]
 }
 
 # Creation Stage
@@ -80,4 +80,62 @@ resource "aws_api_gateway_integration" "zeeward41_post_integration" {
     type = "AWS_PROXY"
     uri = aws_lambda_function.lambda_modify_nVisiteurs.invoke_arn
 
+}
+
+# methode reponse
+
+resource "aws_api_gateway_method_response" "zeeward41_method_response" {
+    rest_api_id = aws_api_gateway_rest_api.zeeward41_api_gateway.id
+    resource_id = aws_api_gateway_resource.zeeward41_get_visiteurs.id
+    http_method = aws_api_gateway_method.zeeward41_get_method.http_method
+    status_code = "200"
+
+    response_parameters = {
+        "method.response.header.Access-Control-Allow-Origin" = true  # Configurez cela pour CORS
+    }
+    depends_on = [aws_api_gateway_method.zeeward41_get_method]
+}
+
+# integration response
+
+resource "aws_api_gateway_integration_response" "zeeward41_integration_response" {
+    rest_api_id = aws_api_gateway_rest_api.zeeward41_api_gateway.id
+    resource_id = aws_api_gateway_resource.zeeward41_get_visiteurs.id
+    http_method = aws_api_gateway_method.zeeward41_get_method.http_method
+    status_code = aws_api_gateway_method_response.zeeward41_method_response.status_code
+
+     response_parameters = {
+        "method.response.header.Access-Control-Allow-Origin" = "'*'"  # Configurez cela pour CORS
+    }
+    depends_on = [aws_api_gateway_integration.zeeward41_get_integration]
+}
+
+# POST
+
+# methode reponse
+
+resource "aws_api_gateway_method_response" "zeeward41_post_method_response" {
+    rest_api_id = aws_api_gateway_rest_api.zeeward41_api_gateway.id
+    resource_id = aws_api_gateway_resource.zeeward41_get_visiteurs.id
+    http_method = aws_api_gateway_method.zeeward41_post_method.http_method
+    status_code = "200"
+
+    response_parameters = {
+        "method.response.header.Access-Control-Allow-Origin" = true  # Configurez cela pour CORS
+    }
+    depends_on = [aws_api_gateway_method.zeeward41_post_method]
+}
+
+# integration response
+
+resource "aws_api_gateway_integration_response" "zeeward41_post_integration_response" {
+    rest_api_id = aws_api_gateway_rest_api.zeeward41_api_gateway.id
+    resource_id = aws_api_gateway_resource.zeeward41_get_visiteurs.id
+    http_method = aws_api_gateway_method.zeeward41_post_method.http_method
+    status_code = aws_api_gateway_method_response.zeeward41_post_method_response.status_code
+
+    response_parameters = {
+        "method.response.header.Access-Control-Allow-Origin" = "'*'"  # Configurez cela pour CORS
+    }
+    depends_on = [aws_api_gateway_integration.zeeward41_post_integration]
 }
