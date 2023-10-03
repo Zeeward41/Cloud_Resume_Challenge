@@ -2,6 +2,7 @@ variable "region_base" {}
 
 resource "aws_s3_bucket" "terraform_state" {
     bucket = "zeeward41-state-file"
+    force_destroy = true
     
 
     
