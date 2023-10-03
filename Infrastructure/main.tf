@@ -1,6 +1,6 @@
 provider "aws" {
   region = var.region_base
-  # profile = "zeeward41"
+  profile = "zeeward41"
   default_tags {
     tags = {
       Createur = "Zee"
