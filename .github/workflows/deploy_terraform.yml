@@ -19,10 +19,10 @@ jobs:
           aws-region: us-east-1
       - name: "Init Terraform"
         run: |
-        pwd
-        cd Infrastructure
-        pwd
-        terraform init
+          pwd
+          cd Infrastructure
+          pwd
+          terraform init
       - name: "terraform apply"
         run: terraform apply -auto-approve
       - name: Fin
