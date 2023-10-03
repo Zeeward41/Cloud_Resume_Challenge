@@ -1,0 +1,26 @@
+name: deployment Terraform
+
+on: workflow_dispatch
+
+jobs:
+  Deployment:
+  runs-on: ubuntu-latest
+  permissions:
+    id-token: write
+    contents: write
+  steps:
+    - name: Recupere repo
+      uses: actions/checkout@v4
+    - name: Connection AWS
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::585355206799:role/Full_access_service_terraform_Cloud_Resume_Challenge
+        role-session-name: Zeeward
+        aws-region: us-east-1
+
+    - name: "Init Terraform"
+        run: terraform init
+      - name: "terraform apply"
+        run: terraform apply -auto-approve
+      - name: Fin
+        run: echo "DONE"
