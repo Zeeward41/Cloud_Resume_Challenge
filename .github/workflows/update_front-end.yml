@@ -5,7 +5,7 @@ on: workflow_dispatch # a changer
 jobs:
   Delete-S3:
     runs-on: ubuntu-latest
-    permissions: write
+    permissions:
       id-token: write
       contents: read
     steps:
