@@ -18,5 +18,9 @@ jobs:
           role-session-name: Zeeward
           aws-region: us-east-1
       - name: vider le Bucket
-        run:
+        run: 
           aws s3 rm s3://www.zeeward41.com --recursive
+      - name: Upload new file
+        run: 
+          aws s3 cp /Front-end s3://www.zeeward41.com --recursive
+          
