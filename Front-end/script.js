@@ -2,7 +2,7 @@
 
 //"
 const site_url = "https://zeeward41.com";
-const api_url = "https://djubickqf0.execute-api.eu-west-2.amazonaws.com/dev/lambda-to-dynamo-zeeward41";
+const api_url = "https://15peguj556.execute-api.eu-west-3.amazonaws.com/dev/lambda-to-dynamo-zeeward41";
 
 function get_visiteurs(url_api, site_api) {
   fetch(url_api, {
