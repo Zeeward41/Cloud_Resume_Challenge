@@ -26,4 +26,7 @@ jobs:
       - name: Upload new file
         run: 
           aws s3 cp Front-end s3://www.zeeward41.com --recursive
+      - name: Invalidation CloudFront
+        run:
+          aws cloudfront create-invalidation --distribution-id E1G1KEFS3TO476 --paths "/*"
           
