@@ -1,0 +1,22 @@
+name: Update_front-end
+
+on: workflow_dispatch # a changer
+
+jobs:
+  Delete-S3:
+    runs-on: ubuntu-latest
+    permissions: write
+      id-token: write
+      contents: read
+    steps:
+      - name: Recupere repo
+        uses: actions/checkout@v4
+      - name: Connection AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{secrets.Full_S3_cloud_Resume_Challenge_role}}
+          role-session-name: Zeeward
+          aws-region: us-east-1
+      - name: vider le Bucket
+        run:
+          aws s3 rm s3//www.zeeward41.com --recursive
