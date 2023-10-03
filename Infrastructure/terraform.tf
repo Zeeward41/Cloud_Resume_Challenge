@@ -16,6 +16,9 @@ terraform {
 
     dynamodb_table = "zeeward41-terraform-lock"
     encrypt = true
+
+    depends_on = [module.remote_backend.aws_s3_bucket.terraform_state, module.remote_backend.aws_dynamodb_table.terraform_locks]
+
     }
 }
 
