@@ -18,7 +18,11 @@ jobs:
           role-session-name: Zeeward
           aws-region: us-east-1
       - name: "Init Terraform"
-        run: terraform init
+        run: |
+        pwd
+        cd Infrastructure
+        pwd
+        terraform init
       - name: "terraform apply"
         run: terraform apply -auto-approve
       - name: Fin
