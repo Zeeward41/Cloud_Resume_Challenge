@@ -17,13 +17,10 @@ jobs:
           role-to-assume: arn:aws:iam::585355206799:role/Full_access_service_terraform_Cloud_Resume_Challenge
           role-session-name: Zeeward
           aws-region: us-east-1
-      - name: "Init Terraform"
+      - name: "Deploy Terraform"
         run: |
-          pwd
           cd Infrastructure
-          pwd
           terraform init
-      - name: "terraform apply"
-        run: terraform apply -auto-approve
+          terraform apply -auto-approve
       - name: Fin
         run: echo "DONE"
