@@ -1,6 +1,9 @@
 name: Update_front-end
 
-on: workflow_dispatch # a changer
+on:
+  push:
+    paths:
+      - 'Front-end/**'
 
 jobs:
   Delete-S3:
