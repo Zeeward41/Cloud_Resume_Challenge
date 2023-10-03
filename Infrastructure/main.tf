@@ -22,7 +22,7 @@ module "backend" {
   region_base = var.region_base
 }
 
-module "remote_backend" {
-  source = "./remote_backend"
-  region_base = var.region_base
-}
+# module "remote_backend" {
+#   source = "./remote_backend"
+#   region_base = var.region_base
+# }
