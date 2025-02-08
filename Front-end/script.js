@@ -4,7 +4,7 @@
 const site_url = "https://zeeward41.com";
 const api_url = "https://15peguj556.execute-api.eu-west-3.amazonaws.com/dev/lambda-to-dynamo-zeeward41";
 
-function get_visiteurs(url_api, site_api) {
+function get_visiteurs(api_url, site_url) {
   fetch(url_api, {
     method: "GET" // ou la méthode appropriée
     // // Autres options de requête si nécessaires
