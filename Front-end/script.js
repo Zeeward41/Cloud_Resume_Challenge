@@ -18,7 +18,7 @@ function get_visiteurs(api_url, site_url) {
       // Log du contenu JSON de la réponse
      // console.log("Contenu JSON de la réponse :", data);
 
-      document.querySelector(".n_visitors").textContent = data["n_visiteurs"];
+      document.querySelector(".n_visitors").textContent = data["n_visiteurs"] + " visitors";
     })
     .catch((error) => {
       // Log des erreurs s'il y en a
@@ -37,7 +37,7 @@ function update_visiteurs(api_url, site_url) {
       .then((data) => {
         //console.log("API activée avec succès", data);
 
-        document.querySelector(".n_visitors").textContent = data["n_visiteurs"] + " visiteurs";
+        document.querySelector(".n_visitors").textContent = data["n_visiteurs"] + " visitors";
 
         // Mettre à jour la session ou le cookie pour indiquer l'activation
         sessionStorage.setItem("apiActivated", "true");
