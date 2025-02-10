@@ -50,5 +50,13 @@ function update_visiteurs(api_url, site_url) {
   }
 }
 
+function toggleMenu() {
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+  menu.classList.toggle("open");
+  icon.classList.toggle("open");
+}
+
+
 get_visiteurs(api_url, site_url);
 update_visiteurs(api_url, site_url);
