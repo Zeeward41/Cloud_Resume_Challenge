@@ -7,8 +7,7 @@ Personal portfolio website with real-time visitor counter, fully deployed and au
 This was my **second cloud project** — after the Minecraft Server (first Terraform + EC2) and before ZeeURL (Kubernetes + GitOps full-stack).  
 It helped me master serverless patterns, secure static hosting, and automated deployment.
 
-Live demo: [https://zeeward41.com](https://zeeward41.com)  
-GitHub repo: [zeeward41/cloud_resume_challenge](https://github.com/zeeward41/cloud_resume_challenge)
+Live demo: [https://zeeward41.com](https://zeeward41.com)
 
 [![Cache Invalidation](https://github.com/zeeward41/cloud_resume_challenge/actions/workflows/update_front-end.yml/badge.svg)](https://github.com/zeeward41/cloud_resume_challenge/actions/workflows/update_front-end.yml)
 
@@ -71,4 +70,3 @@ After this, I moved to **ZeeURL** — a full-stack application with Kubernetes, 
 100% solo project during career transition (2024).  
 Second step after Minecraft Server (first Terraform), before ZeeURL.  
 AWS Certified Solutions Architect – Associate.
-
