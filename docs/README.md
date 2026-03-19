@@ -60,7 +60,7 @@ Goal: apply AWS fundamentals in a real, public project:
 - IaC with Terraform
 - Basic CI/CD automation
 
-After this, I moved to **ZeeURL** — a full-stack application with Kubernetes, GitOps, hybrid CI (GitHub Actions + self-hosted Jenkins), and distributed ID generation.
+After this, I moved to [ZeeURL](https://github.com/Zeeward41/ZeeUrl) — a full-stack application with Kubernetes, GitOps, hybrid CI (GitHub Actions + self-hosted Jenkins), and distributed ID generation.
 
 ## License
 
